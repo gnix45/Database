@@ -1,0 +1,141 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+/* Search Container */
+.search-container {
+    flex: 1; /* Makes the container take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.search-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #007bff;
+}
+
+form {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Footer */
+footer {
+    position: relative;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    height: 25vh; /* Adjust height to occupy 1/4 of the viewport height */
+    border-radius: 50% 50% 0 0; /* Creates an upward oval effect */
+    overflow: hidden;
+}
+
+/* Sparks Effect */
+.footer-sparks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.spark {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, #fff, transparent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: spark 1.5s infinite;
+}
+
+@keyframes spark {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50px) scale(1.5);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-container {
+        padding: 20px 0;
+    }
+    
+    .search-container h2 {
+        font-size: 1.5em;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    input[type="text"], button {
+        font-size: 0.9em;
+    }
+}
